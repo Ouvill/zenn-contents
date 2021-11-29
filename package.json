@@ -1,11 +1,17 @@
 {
   "name": "zenn-contents",
-  "version": "1.0.0",
-  "main": "index.js",
+  "scripts": {
+    "help": "zenn help",
+    "new": "zenn new:article",
+    "preview": "zenn preview"
+  },
+  "dependencies": {
+    "zenn-cli": "^0.1.99"
+  },
+  "devDependencies": {
+    "prismjs": "^1.25.0"
+  },
   "repository": "https://github.com/Ouvill/zenn-contents.git",
   "author": "Ouvill <contact@ouvill.net>",
-  "license": "MIT",
-  "dependencies": {
-    "zenn-cli": "^0.1.94"
-  }
+  "license": "MIT"
 }
