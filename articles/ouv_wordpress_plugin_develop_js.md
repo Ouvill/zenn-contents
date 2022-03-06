@@ -134,7 +134,8 @@ https://developer.wordpress.org/plugins/plugin-basics/header-requirements/
 
 ```php
 function awesome_plugin_add_js() {
-	echo '<script src="' . esc_url(plugins_url( 'index.js', __FILE__ )) . '" ></script>';
+    wp_register_script('awesome-plugin-js', esc_url(plugins_url( 'bundle.js', __FILE__ )), array(), NULL, true);
+    wp_enqueue_script('awesome-plugin-js');
 }
 
 add_action('wp_head', 'copy_steganography_add_js');
