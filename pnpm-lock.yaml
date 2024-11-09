@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       zenn-cli:
-        specifier: ^0.1.99
+        specifier: ^0.1.158
         version: 0.1.158
     devDependencies:
       prismjs:
-        specifier: ^1.25.0
+        specifier: ^1.29.0
         version: 1.29.0
 
 packages:
