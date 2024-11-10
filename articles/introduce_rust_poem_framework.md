@@ -3,7 +3,7 @@ title: "RustのWebフレームワークPoemの紹介 - OpenAPIのドキュメン
 emoji: "📖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust, openapi, poem]
-published: false
+published: true
 ---
 
 Rustのエコシステムも徐々に発展してきてWebフレームワークもactix-web, axum, rocketなどいくつか作成されてきました。OpenAPIのドキュメントを同時に生成してくれる方法はないかと探していたところ、PoemというWebフレームワークがかなり便利だったので紹介します。
