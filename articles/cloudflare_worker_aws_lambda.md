@@ -10,7 +10,7 @@ AWS Lambdaの関数をIAMの認証付きでAWS外部から呼び出す方法を�
 
 使用する言語はJavaScriptです。
 
-Cloudflare Workerでサーバー機能を実装していたのですが、どうしても制限が厳しく、全てをCloudflare Workerで実装するのは難しかったので、一部のサーバー処理をAWS Lambdaで実装し、Cloudflare Workerから呼び出すことにしました。
+Cloudflare Workersでサーバー機能を実装していたのですが、どうしても制限が厳しく、全てをCloudflare Workersで実装するのは難しかったので、一部のサーバー処理をAWS Lambdaで実装し、Cloudflare Workersから呼び出すことにしました。
 
 今回はその備忘録です。
 
@@ -24,7 +24,7 @@ https://github.com/Ouvill/cloudflare_worker_aws_lambda_samplel
 - AWS LamdbaのCloudURLを取得する
 - AWS IAMでユーザーを作成する
 - AWS IAMでユーザーにポリシーを付与する
-- Cloudflare WorkerでAWS Lambdaを呼び出す
+- Cloudflare WorkersでAWS Lambdaを呼び出す
 
 ## AWS Lambdaの関数を作成する
 
@@ -171,7 +171,7 @@ AWS Lambdaをデプロイします。Lambdaのページを開き、「Create fun
 
 ## AWS LambdaのCloudURLを作成する。
 
-AWS LambdaにはFunction URLという機能があります。Lambda関数にそれぞれ独立したURLが発行され、そのURLを使ってLambda関数を呼び出せます。今回はこのFunction  URLを使ってCloudflare WorkerからLambda関数を呼び出します。
+AWS LambdaにはFunction URLという機能があります。Lambda関数にそれぞれ独立したURLが発行され、そのURLを使ってLambda関数を呼び出せます。今回はこのFunction  URLを使ってCloudflare WorkersからLambda関数を呼び出します。
 
 作成したLambda関数のページから「Configuration」タブを開きます。
 
@@ -247,9 +247,9 @@ async function invokeMyLambda(event) {
 invokeMyLambda({my: 'event'}).then(json => console.log(json))
 ```
 
-## Hono on Cloudflare WorkerでAWS4fetchを使ってAWS Lambdaを呼び出す
+## Hono on Cloudflare WorkersでAWS4fetchを使ってAWS Lambdaを呼び出す
 
-Cloudflare Workerで動作するHonoからAWS Lambdaを呼び出すコードを書いてみます。
+Cloudflare Workersで動作するHonoからAWS Lambdaを呼び出すコードを書いてみます。
 
 honoのコードを作成します。
 
@@ -263,7 +263,7 @@ npm create hono@latest
 cd worker-sample
 ```
 
-AWSのアクセスキーIDとシークレットキーを環境変数から渡すことにします。hono on cloudflare workerから環境変数を取得する場合はhonoの`c.env`を使います。
+AWSのアクセスキーIDとシークレットキーを環境変数から渡すことにします。hono on cloudflare workersから環境変数を取得する場合はhonoの`c.env`を使います。
 
 ```typescript
 import { Hono } from 'hono'
@@ -307,11 +307,11 @@ npm run dev
 
 ブラウザで`http://localhost:8787`にアクセスし、AWS Lambdaのレスポンスが返ってくれば成功です。
 
-以上でAWS LambdaをAWS外部(Cloudflare Worker)から呼び出す方法を紹介しました。
+以上でAWS LambdaをAWS外部(Cloudflare Workers)から呼び出す方法を紹介しました。
 
 ## まとめ
 
-AWS LambdaにDockerイメージをデプロイし、Cloudflare Workerから呼び出す方法を紹介しました。
+AWS LambdaにDockerイメージをデプロイし、Cloudflare Workersから呼び出す方法を紹介しました。
 ポイントは以下です。
 
 - AWS LambdaにFunction URLを作成する
@@ -320,7 +320,7 @@ AWS LambdaにDockerイメージをデプロイし、Cloudflare Workerから呼�
 
 ## 所感
 
-Cloudflare Workerは結構制限が厳しいのですが、AWSやGCPのサービスと連携し、マイクロサーバーアーキテクチャを構築することで、制限を回避できると思います。
+Cloudflare Workersは結構制限が厳しいのですが、AWSやGCPのサービスと連携し、マイクロサーバーアーキテクチャを構築することで、制限を回避できると思います。
 
 今回は説明のためにGUIで操作しましたが、TerraformやOpenTofu, 
 AWS CloudFormationなどを利用してAWSの設定をコード化することをおすすめします。
