@@ -318,7 +318,7 @@ AWS LambdaにDockerイメージをデプロイし、Cloudflare Workerから呼�
 - AWS IAMで`InvokeFunctionUrl`の権限を付与すること
 - aws4fetchを利用してAWS Lambdaを呼び出すこと
 
-## 所管
+## 所感
 
 Cloudflare Workerは結構制限が厳しいのですが、AWSやGCPのサービスと連携し、マイクロサーバーアーキテクチャを構築することで、制限を回避できると思います。
 
