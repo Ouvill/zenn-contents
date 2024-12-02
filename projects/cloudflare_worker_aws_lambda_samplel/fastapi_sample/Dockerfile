@@ -1,6 +1,10 @@
-# Use the official Python image from the Docker Hub
-FROM python:3.12-slim-bookworm
+FROM public.ecr.aws/docker/library/python:3.12-slim
+# Expose the port the app runs on
+ENV PORT=8000
+ENV XDG_CACHE_HOME=/tmp/.cache
+
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.8.4 /lambda-adapter /opt/extensions/lambda-adapter
 
 # Copy the project into the image
 ADD . /app
@@ -9,8 +13,5 @@ ADD . /app
 WORKDIR /app
 RUN uv sync --frozen
 
-# Expose the port the app runs on
-EXPOSE 8080
-
 # Command to run the application
-CMD ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD uv run uvicorn main:app --host 0.0.0.0 --port ${PORT}
