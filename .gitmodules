@@ -1,0 +1,3 @@
+[submodule "projects/cloudflare_worker_aws_lambda_samplel"]
+	path = projects/cloudflare_worker_aws_lambda_samplel
+	url = https://github.com/Ouvill/cloudflare_worker_aws_lambda_samplel
