@@ -14,6 +14,10 @@ Cloudflare Workerでサーバー機能を実装していたのですが、どう
 
 今回はその備忘録です。
 
+今回のサンプルコード
+
+https://github.com/Ouvill/cloudflare_worker_aws_lambda_samplel
+
 ## この記事でやること
 
 - AWS LambdaにDockerイメージをデプロイする
@@ -305,10 +309,6 @@ npm run dev
 
 以上でAWS LambdaをAWS外部(Cloudflare Worker)から呼び出す方法を紹介しました。
 
-## 所管
-
-Cloudflare Workerは結構制限が厳しいのですが、AWSやGCPのサービスと連携し、マイクロサーバーアーキテクチャを構築することで、制限を回避できると思います。
-
 ## まとめ
 
 AWS LambdaにDockerイメージをデプロイし、Cloudflare Workerから呼び出す方法を紹介しました。
@@ -317,3 +317,7 @@ AWS LambdaにDockerイメージをデプロイし、Cloudflare Workerから呼�
 - AWS LambdaにFunction URLを作成する
 - AWS IAMで`InvokeFunctionUrl`の権限を付与すること
 - aws4fetchを利用してAWS Lambdaを呼び出すこと
+
+## 所管
+
+Cloudflare Workerは結構制限が厳しいのですが、AWSやGCPのサービスと連携し、マイクロサーバーアーキテクチャを構築することで、制限を回避できると思います。
