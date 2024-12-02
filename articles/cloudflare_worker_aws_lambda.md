@@ -3,7 +3,7 @@ title: "AWS Lambdaの関数をAWS外部(Cloudflareなど)から呼び出す"
 emoji: "⚡"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['aws', 'lambda', 'cloudflare', 'aws4fetch']
-published: false
+published: true
 ---
 
 AWS Lambdaの関数をIAMの認証付きでAWS外部から呼び出す方法を紹介します。
