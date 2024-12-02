@@ -321,3 +321,6 @@ AWS LambdaにDockerイメージをデプロイし、Cloudflare Workerから呼�
 ## 所管
 
 Cloudflare Workerは結構制限が厳しいのですが、AWSやGCPのサービスと連携し、マイクロサーバーアーキテクチャを構築することで、制限を回避できると思います。
+
+今回は説明のためにGUIで操作しましたが、TerraformやOpenTofu, 
+AWS CloudFormationなどを利用してAWSの設定をコード化することをおすすめします。
