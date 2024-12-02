@@ -2,9 +2,11 @@
   "name": "worker",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify"
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "aws4fetch": "^1.0.20",
     "hono": "^4.6.12"
   },
   "devDependencies": {
