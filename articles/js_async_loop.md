@@ -6,8 +6,6 @@ topics: ['javascript', 'async', 'loop','promise']
 published: true
 ---
 
-foreachとかfor ofとかmapとかPromise.allとか非同期のループでハマる人いそうなので解説してみる。
-
 ## JavaScriptのLoop処理
 
 JavaScriptのfor文やwhile文のループ処理はご存知でしょうか？
