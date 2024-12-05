@@ -129,7 +129,7 @@ function asyncForEachWithPromise(arr) {
 関数からなにかがreturnされたら、それは関数の終了を意味します。`forEach`は`Promise`のなかの`sleep`の処理が終わるまで待たず、次の処理を実行します。配列の各要素に対して同じように行ない`forEach`はすぐに終了します。
 そのため、`done`が先に表示されてしまいます。
 
-以下のように`forEach`の宣言に`await`を追加したとしても、`forEach`はPromiseを返しません。`forEach`は各関数の返り値を無視し、何も返しません。よって`arr.forEach`の手前に追加した`await`は無視されます。
+以下のように`forEach`の宣言に`await`を追加したとしても意味はありません。`forEach`の中で実行するアロー関数の返り値は破棄され、`forEach`はPromiseを返しません。`forEach`自体は何も返すことはありません。そのため`arr.forEach`の手前に追加した`await`は無視されます。
 
 ```js
 // 指定した時間待機するPromiseを返す関数
