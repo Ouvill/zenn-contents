@@ -1,5 +1,5 @@
 ---
-title: "2025年現在のLinuxデスクトップについて"
+title: "2025年、Windows 10からLinuxデスクトップへ移行を検討する人へ"
 emoji: "🐧"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ['linux', 'windows']
