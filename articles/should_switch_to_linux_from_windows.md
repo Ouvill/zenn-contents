@@ -3,7 +3,7 @@ title: "2025年現在のLinuxデスクトップについて"
 emoji: "🐧"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ['linux', 'windows']
-published: false
+published: true
 ---
 
 Windows 10のサポートが2025年10月に終了します。サポートが終了すると、セキュリティアップデートが提供されなくなり、新たな脆弱性が修正されなくなります。そのため、引き続きWindows 10を使い続けることは、ハッキングなどのリスクが高まることを意味します。
